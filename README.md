@@ -1,1 +1,1 @@
-# BLAH6 results on the Annotation of Human Phenotype-Gene Relations: Identifying Negative Relations
+# BLAH6: Annotation of Human Phenotype-Gene Relations - Identification of Negative Relations
