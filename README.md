@@ -33,5 +33,5 @@ Initial exploration of the identification of negative relations between human ph
 #### Future Work:
 
 - Apply a classifier (check how it compares).
-- Evaluate on the entire data set.
+- Evaluate on the entire PGR corpus.
 - Apply to other data sets. Negative relations in manually annotated data sets should be easier to detect since the unknown relations would be present. 
