@@ -18,7 +18,10 @@ The first step was to create a sub-set of 127 false annotations within the PGR c
 
 - *Here we discuss 'congenital disorders of autophagy' as an emerging subclass of inborn errors of metabolism by using the examples of six recently identified monogenic diseases: EPG5-related Vici syndrome, beta-propeller protein-associated neurodegeneration due to mutations in WDR45, **SNX14**-associated autosomal-recessive cerebellar ataxia and **intellectual disability** syndrome, and three forms of hereditary spastic paraplegia, SPG11, SPG15 and SPG49 caused by SPG11, ZFYVE26 and TECPR2 mutations, respectively.*
 
-The manual annotation allowed for the assessment of common patterns for the false and negative types of relations. False relations are often enumerations or an explanation of protocol that does not imply any type of relation. Negative relations are more regular, with words that imply negation of association, such as *non*, *no*, and *not* combined with *associated*, *involved*, and *dissociation*.
+The manual annotation allowed for the assessment of common patterns for the false and negative types of relations:
+
+- False relations are often enumerations or an explanation of protocol that does not imply any type of relation. 
+- Negative relations are more regular, with words that imply negation of association, such as *non*, *no*, and *not* combined with *associated*, *involved*, and *dissociation*.
 
 ## Day 06/02/2020
  
