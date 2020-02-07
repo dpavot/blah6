@@ -31,7 +31,6 @@ def get_fnu(curation_file, destination_file):
     curation.close()
 
     destination = open(destination_file, 'w', encoding = 'utf-8')
-
     for annotation in save_fnu:
         elements = '\t'.join(annotation)
         destination.write(elements + '\n')
@@ -69,7 +68,6 @@ def detect_false(corpus_file):
             predict = 'U'
 
             for false_expression in false_expressions:
-
                 patterns = ['(' + gene_entity + '|' + phenotype_entity + ')(.*?)' + false_expression + '(.*?)' + false_expression + '(.*?)' + false_expression + '(.*?)(' + gene_entity + '|' + phenotype_entity + ')']
 
                 for pattern in patterns:
@@ -113,7 +111,6 @@ def detect_negative(corpus_file):
             predict = 'U'
 
             for negative_expression in negative_expressions:
-
                 patterns = ['(' + gene_entity + '|' + phenotype_entity + ')(.*?)' + negative_expression + '(.*?)(' + gene_entity + '|' + phenotype_entity + ')',
                             '^' + negative_expression + '(.*?)(' + gene_entity + '|' + phenotype_entity + ')' + '(.*?)(' + gene_entity + '|' + phenotype_entity + ')']
 
@@ -166,7 +163,6 @@ def write_results_file(corpus_file, destination_file):
 
     return
 
-write_results_file('data/fnu.tsv', 'data/fnu_predictions.tsv')
 
 def results_list(annotated_file):
     """
@@ -218,4 +214,16 @@ def metrics(gold_standard_file, predictions_file):
     return true_count, false_count
 
 
-print(metrics('data/fnu_gold_standard.tsv', 'data/fnu_predictions.tsv'))
+#### RUN ####
+
+def main():
+    """
+
+    """
+
+    write_results_file('data/fnu.tsv', 'data/fnu_predictions.tsv')
+    print(metrics('data/fnu_gold_standard.tsv', 'data/fnu_predictions.tsv'))
+
+
+if __name__ == '__main__':
+    main()
