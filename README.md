@@ -1,5 +1,7 @@
 # BLAH6: Annotation of Human Phenotype-Gene Relations - Identification of Negative Relations
 
+![alt text](https://github.com/dpavot/blah6/blob/master/proposal.png)
+
 Accessible negative results are relevant for researchers and clinicians not only to limit their search space but also to prevent the costly re-exploration of the hypothesis. However, most biomedical relation extraction data sets do not seek to distinguish between a false and a negative relation. A false relation should express a context where the entities are not related. In contrast, a negative relation should express a context where there is an affirmation of no association between the two entities. Furthermore, when we are dealing with data sets created using distant supervision techniques, we also have some false negative relations that constitute undocumented/unknown relations. Unknown relations are good examples to further exploration by researchers and clinicians. We propose to improve the distinction between these two concepts, by revising the false relations of the PGR corpus with regular expressions. 
 
 ## Day 05/02/2020
