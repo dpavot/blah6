@@ -24,7 +24,7 @@ The manual annotation allowed for the assessment of common patterns for the fals
  
 Application of small sub set of regular expressions to catch false and negative examples that follow the previously mentioned patterns had some interesting results.
 
-Test against the gold standard data set shows 52 detections.
+Test against the gold standard data set shows 53 detections.
 
 ## Day 07/02/2020
 

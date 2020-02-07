@@ -55,7 +55,7 @@ def detect_false(corpus_file):
     line_count = 0
     predictions = {}
 
-    false_expressions = [',']
+    false_expressions = ['analyzed']
 
     for row in corpus_reader:
         if line_count == 0:
@@ -68,7 +68,8 @@ def detect_false(corpus_file):
             predict = 'U'
 
             for false_expression in false_expressions:
-                patterns = ['(' + gene_entity + '|' + phenotype_entity + ')(.*?)' + false_expression + '(.*?)' + false_expression + '(.*?)' + false_expression + '(.*?)(' + gene_entity + '|' + phenotype_entity + ')']
+                patterns = ['(' + gene_entity + '|' + phenotype_entity + ')(.*?),(.*?),(.*?),(.*?)(' + gene_entity + '|' + phenotype_entity + ')',
+                            'In' + '(.*?)' + false_expression + '(.*?)(' + gene_entity + '|' + phenotype_entity + ')(.*?)(' + gene_entity + '|' + phenotype_entity + ')']
 
                 for pattern in patterns:
                     result = re.search(pattern, sentence)
