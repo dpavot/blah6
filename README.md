@@ -24,14 +24,15 @@ The manual annotation allowed for the assessment of common patterns for the fals
  
 Application of small sub set of regular expressions to catch false and negative examples that follow the previously mentioned patterns had some interesting results.
 
-Test against the gold standard data set shows 53 detections.
+Test against the gold standard data set shows 53/127 (41.73%) detections.
 
 ## Day 07/02/2020
+
+Application of a classifier without any tuning (neural network model): 23.08% accuracy.
 
 Initial exploration of the identification of negative relations between human phenotypes and genes was partially successful. More manual work, building regular expressions, should boost these preliminary results.
 
 #### Future Work:
 
-- Application of a classifier (check how it compares).
 - Evaluate on the entire PGR corpus.
 - Application to other data sets. Negative relations in manually annotated data sets should be easier to detect since the unknown relations would be present. 
