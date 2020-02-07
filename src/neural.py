@@ -25,8 +25,8 @@ def prepare_inputs(X_train, X_test):
 		le = sklearn.preprocessing.LabelEncoder()
 		le.fit(X_train[:, i])
 		# encode
-		train_enc = le.fit_transform(X_train[:, i])
-		test_enc = le.fit_transform(X_test[:, i])
+		train_enc = le.transform(X_train[:, i])
+		test_enc = le.fit_transform(X_test[:, i])  # not well
 		# store
 		X_train_enc.append(train_enc)
 		X_test_enc.append(test_enc)
@@ -40,7 +40,7 @@ def prepare_targets(y_train, y_test):
 	return y_train_enc, y_test_enc
 
 X, y = load_dataset('data/fnu_gold_standard.tsv')
-X_train, X_test, y_train, y_test = sklearn.model_selection.train_test_split(X, y, test_size = 0.10, random_state = 1)
+X_train, X_test, y_train, y_test = sklearn.model_selection.train_test_split(X, y, test_size = 0.30, random_state = 1)
 
 print('Train', X_train.shape, y_train.shape)
 print('Test', X_test.shape, y_test.shape)
