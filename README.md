@@ -1,7 +1,7 @@
 # BLAH6: Annotation of Human Phenotype-Gene Relations - Identification of Negative Relations
 
 <p align="center">
-  <img width="460" height="300" src="https://github.com/dpavot/blah6/blob/master/proposal.png">
+  <img width=\textwith height="300" src="https://github.com/dpavot/blah6/blob/master/proposal.png">
 </p>
 
 
