@@ -191,6 +191,42 @@ def results_list(annotated_file):
     return list_type
 
 
+def precision(tp, fp):
+    """
+
+    :param tp:
+    :param fp:
+    :return:
+    """
+
+    return tp/(tp+fp)
+
+
+def recall(tp, fn):
+    """
+
+    :param tp:
+    :param fn:
+    :return:
+    """
+
+    return tp / (tp + fn)
+
+
+def f_measure(p, r):
+    """
+
+    :param p:
+    :param r:
+    :return:
+    """
+
+    print(p)
+    print(r)
+    print(2*((p*r)/(p+r)))
+    return 2*((p*r)/(p+r))
+
+
 def metrics(gold_standard_file, predictions_file):
     """
 
@@ -205,14 +241,67 @@ def metrics(gold_standard_file, predictions_file):
     true_count = 0
     false_count = 0
 
+    tp_f_count = 0
+    tp_n_count = 0
+    tp_u_count = 0
+
+    fp_f_count = 0
+    fp_n_count = 0
+    fp_u_count = 0
+
+    fn_f_count = 0
+    fn_n_count = 0
+    fn_u_count = 0
+
+    all_f_count = 0
+    all_n_count = 0
+    all_u_count = 0
+
     for i in range(len(list_gold_standard)):
         if list_gold_standard[i] == list_predictions[i]:
+            if list_gold_standard[i] == 'F':
+                tp_f_count += 1
+            elif list_gold_standard[i] == 'N':
+                tp_n_count += 1
+            elif list_gold_standard[i] == 'U':
+                tp_u_count += 1
+
             true_count += 1
 
         else:
+            if list_predictions[i] == 'F':
+                fp_f_count += 1
+            elif list_gold_standard[i] == 'F':
+                fn_f_count += 1
+
+            if list_predictions[i] == 'N':
+                fp_n_count += 1
+            elif list_gold_standard[i] == 'N':
+                fn_n_count += 1
+
+            if list_predictions[i] == 'U':
+                fp_u_count += 1
+            elif list_gold_standard[i] == 'U':
+                fn_u_count += 1
+
             false_count += 1
 
-    return true_count, false_count
+        if list_predictions[i] == 'F':
+            all_f_count += 1
+
+        elif list_predictions[i] == 'N':
+            all_n_count += 1
+
+        elif list_predictions[i] == 'U':
+            all_u_count += 1
+
+    f_f_score = f_measure(precision(tp_f_count, fp_f_count), recall(tp_f_count, fn_f_count))
+    n_f_score = f_measure(precision(tp_n_count, fp_n_count), recall(tp_n_count, fn_n_count))
+    u_f_score = f_measure(precision(tp_u_count, fp_u_count), recall(tp_u_count, fn_u_count))
+
+    weighted_f1 = (all_f_count * f_f_score + all_n_count * n_f_score + all_u_count * u_f_score) / (all_f_count + all_n_count + all_u_count)
+
+    return true_count, false_count, weighted_f1
 
 
 #### RUN ####

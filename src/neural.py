@@ -72,3 +72,5 @@ model.fit(X_train_enc, y_train_enc, epochs=100, batch_size=16)#, verbose=2)
 
 _, accuracy = model.evaluate(X_test_enc, y_test_enc)#, verbose=0)
 print('Accuracy: %.2f' % (accuracy*100))
+
+#sklearn.metrics.f1_score(y_test, y_test_enc, labels=in_layers, pos_label=1, average='weighted', sample_weight=None)
