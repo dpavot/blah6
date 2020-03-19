@@ -1,4 +1,4 @@
-# BLAH6: Annotation of Human Phenotype-Gene Relations - Identification of Negative Relations
+# BLAH6: Annotation of Human Phenotype-Gene Relations - Improving Accessibility and Distinction between Negative Results in Biomedical Relation Extraction
 
 <p align="center">
   <img src="https://github.com/dpavot/blah6/blob/master/proposal.png">
@@ -7,7 +7,9 @@
 
 Accessible negative results are relevant for researchers and clinicians not only to limit their search space but also to prevent the costly re-exploration of research hypotheses. However, most biomedical relation extraction data sets do not seek to distinguish between a false and a negative relation among two biomedical entities. Furthermore, data sets created using distant supervision techniques also have some false negative relations that constitute undocumented/unknown relations. We propose to improve the distinction between these concepts, by revising a subset of the relations marked as false on the PGR corpus and give the first steps to automatically distinguish between the false (F), negative (N), and unknown (U) results.
 
-## Day 05/02/2020
+## BLAH6 Daily Tasks & Initial Results
+
+### Day 05/02/2020
  
 The first step was to create a sub-set of 127 false annotations within the PGR corpus. This sub-set was manually annotated to make the distinction between false (F), negative (N), and unknown (U) relations. 
 
@@ -28,13 +30,13 @@ The manual annotation allowed for the assessment of common patterns for the fals
 - False relations are often enumerations or an explanation of protocol that does not imply any type of relation. 
 - Negative relations are more regular, with words that imply negation of association, such as *non*, *no*, and *not* combined with *associated*, *involved*, and *dissociation*.
 
-## Day 06/02/2020
+### Day 06/02/2020
  
 Application of small sub set of regular expressions to catch false and negative examples that follow the previously mentioned patterns had some interesting results.
 
 Test against the gold standard data set shows 53/127 (41.73%) detections.
 
-## Day 07/02/2020
+### Day 07/02/2020
 
 Application of a classifier without any tuning (neural network model): 23.08% accuracy.
 
