@@ -7,6 +7,8 @@
 
 Accessible negative results are relevant for researchers and clinicians not only to limit their search space but also to prevent the costly re-exploration of research hypotheses. However, most biomedical relation extraction data sets do not seek to distinguish between a false and a negative relation among two biomedical entities. Furthermore, data sets created using distant supervision techniques also have some false negative relations that constitute undocumented/unknown relations. We propose to improve the distinction between these concepts, by revising a subset of the relations marked as false on the PGR corpus and give the first steps to automatically distinguish between the false (F), negative (N), and unknown (U) results.
 
+Our academic paper which describes this work in detail can be found [here](https://genominfo.org/journal/view.php?number=606&viewtype=pubreader).
+
 ## BLAH6 Daily Tasks & Initial Results
 
 ### Day 05/02/2020
